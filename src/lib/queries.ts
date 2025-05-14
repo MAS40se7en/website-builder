@@ -3,7 +3,7 @@
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import prisma from "./db";
 import { redirect } from "next/navigation";
-import { User } from "@/generated/prisma";
+import { Agency, User } from "@/generated/prisma";
 
 const client = await clerkClient();
 
@@ -19,7 +19,7 @@ export const getAuthUserDetails = async () => {
             email: user.emailAddresses[0].emailAddress
         },
         include: {
-            agency: {
+            Agency: {
                 include: {
                     SidebarOption: true,
                     SubAccount: {
@@ -107,7 +107,7 @@ export const saveActivityLogsNotification = async ({
         })
 
         if (response) {
-            foundAgencyId = response.agencyId
+            foundAgencyId = response.AgencyId
         }
     }
 
@@ -169,7 +169,7 @@ export const verifyAndAcceptInvitation = async () => {
         const userDetails = await createTeamUser(invitationExists.agencyId, {
             email: invitationExists.email,
             agencyId: invitationExists.agencyId,
-            avatarUrl: invitationExists.avatarUrl,
+            avatarUrl: invitationExists.avatarUrl || '',
             id: user.id,
             name: `${user.firstName} ${user.lastName}`,
             role: invitationExists.role,
@@ -214,4 +214,15 @@ export const verifyAndAcceptInvitation = async () => {
 
 
 
+}
+
+export const updateAgencyDetails = async (agencyId: string, agencyDetails: Partial<Agency>) => {
+    const response = await prisma.agency.update({
+        where: {
+            id: agencyId
+        },
+        data: {...agencyDetails}
+    })
+
+    return response
 }

@@ -290,6 +290,7 @@ exports.Prisma.InvitationScalarFieldEnum = {
   id: 'id',
   email: 'email',
   agencyId: 'agencyId',
+  avatarUrl: 'avatarUrl',
   status: 'status',
   role: 'role'
 };
@@ -338,7 +339,7 @@ exports.Prisma.NotificationScalarFieldEnum = {
   id: 'id',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  notificaiton: 'notificaiton',
+  notification: 'notification',
   agencyId: 'agencyId',
   subAccountId: 'subAccountId',
   userId: 'userId'
@@ -503,7 +504,8 @@ exports.Prisma.SubAccountSidebarOptionOrderByRelevanceFieldEnum = {
 exports.Prisma.InvitationOrderByRelevanceFieldEnum = {
   id: 'id',
   email: 'email',
-  agencyId: 'agencyId'
+  agencyId: 'agencyId',
+  avatarUrl: 'avatarUrl'
 };
 
 exports.Prisma.ClassNameOrderByRelevanceFieldEnum = {
@@ -538,7 +540,7 @@ exports.Prisma.AgencySideBarOptionOrderByRelevanceFieldEnum = {
 
 exports.Prisma.NotificationOrderByRelevanceFieldEnum = {
   id: 'id',
-  notificaiton: 'notificaiton',
+  notification: 'notification',
   agencyId: 'agencyId',
   subAccountId: 'subAccountId',
   userId: 'userId'

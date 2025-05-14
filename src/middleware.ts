@@ -1,10 +1,14 @@
 import baseConfig from '@/config';
-import { clerkMiddleware, /*createRouteMatcher*/ } from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
-//const isPublicRoute = createRouteMatcher(['/site', '/agency/sign-in', '/agency/sign-up', 'api/uploadthing', '/']);
+const isPublicRoute = createRouteMatcher(['/site', '/agency/sign-in', '/agency/sign-up', 'api/uploadthing', '/']);
 
 export default clerkMiddleware(async (auth, req) => {
+    if(!isPublicRoute(req)) {
+        await auth.protect();
+    }
+    
     const url = req.nextUrl
     const searchParams = url.searchParams.toString()
     const hostname = req.headers.get('host')

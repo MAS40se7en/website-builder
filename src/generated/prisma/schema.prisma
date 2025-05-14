@@ -91,7 +91,7 @@ model Agency {
   createdAt        DateTime              @default(now())
   updatedAt        DateTime              @updatedAt
   SubAccount       SubAccount[]
-  SidbarOption     AgencySideBarOption[]
+  SidebarOption    AgencySideBarOption[]
   Invitation       Invitation[]
   Notification     Notification[]
   Subscription     Subscription[]
@@ -315,12 +315,13 @@ enum InvitationStatus {
 }
 
 model Invitation {
-  id       String           @id @default(uuid())
-  email    String           @unique
-  agencyId String
-  Agency   Agency           @relation(fields: [agencyId], references: [id], onDelete: Cascade)
-  status   InvitationStatus @default(PENDING)
-  role     Role             @default(SUBACCOUNT_USER)
+  id        String           @id @default(uuid())
+  email     String           @unique
+  agencyId  String
+  avatarUrl String?
+  Agency    Agency           @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  status    InvitationStatus @default(PENDING)
+  role      Role             @default(SUBACCOUNT_USER)
 
   @@index([agencyId])
 }
@@ -383,7 +384,7 @@ model Notification {
   id           String   @id @default(uuid())
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  notificaiton String
+  notification String
   agencyId     String
   subAccountId String?
   userId       String

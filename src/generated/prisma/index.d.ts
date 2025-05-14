@@ -2844,7 +2844,7 @@ export namespace Prisma {
   export type AgencyCountOutputType = {
     users: number
     SubAccount: number
-    SidbarOption: number
+    SidebarOption: number
     Invitation: number
     Notification: number
     Subscription: number
@@ -2854,7 +2854,7 @@ export namespace Prisma {
   export type AgencyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     users?: boolean | AgencyCountOutputTypeCountUsersArgs
     SubAccount?: boolean | AgencyCountOutputTypeCountSubAccountArgs
-    SidbarOption?: boolean | AgencyCountOutputTypeCountSidbarOptionArgs
+    SidebarOption?: boolean | AgencyCountOutputTypeCountSidebarOptionArgs
     Invitation?: boolean | AgencyCountOutputTypeCountInvitationArgs
     Notification?: boolean | AgencyCountOutputTypeCountNotificationArgs
     Subscription?: boolean | AgencyCountOutputTypeCountSubscriptionArgs
@@ -2889,7 +2889,7 @@ export namespace Prisma {
   /**
    * AgencyCountOutputType without action
    */
-  export type AgencyCountOutputTypeCountSidbarOptionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AgencyCountOutputTypeCountSidebarOptionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: AgencySideBarOptionWhereInput
   }
 
@@ -4659,7 +4659,7 @@ export namespace Prisma {
     updatedAt?: boolean
     users?: boolean | Agency$usersArgs<ExtArgs>
     SubAccount?: boolean | Agency$SubAccountArgs<ExtArgs>
-    SidbarOption?: boolean | Agency$SidbarOptionArgs<ExtArgs>
+    SidebarOption?: boolean | Agency$SidebarOptionArgs<ExtArgs>
     Invitation?: boolean | Agency$InvitationArgs<ExtArgs>
     Notification?: boolean | Agency$NotificationArgs<ExtArgs>
     Subscription?: boolean | Agency$SubscriptionArgs<ExtArgs>
@@ -4692,7 +4692,7 @@ export namespace Prisma {
   export type AgencyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     users?: boolean | Agency$usersArgs<ExtArgs>
     SubAccount?: boolean | Agency$SubAccountArgs<ExtArgs>
-    SidbarOption?: boolean | Agency$SidbarOptionArgs<ExtArgs>
+    SidebarOption?: boolean | Agency$SidebarOptionArgs<ExtArgs>
     Invitation?: boolean | Agency$InvitationArgs<ExtArgs>
     Notification?: boolean | Agency$NotificationArgs<ExtArgs>
     Subscription?: boolean | Agency$SubscriptionArgs<ExtArgs>
@@ -4705,7 +4705,7 @@ export namespace Prisma {
     objects: {
       users: Prisma.$UserPayload<ExtArgs>[]
       SubAccount: Prisma.$SubAccountPayload<ExtArgs>[]
-      SidbarOption: Prisma.$AgencySideBarOptionPayload<ExtArgs>[]
+      SidebarOption: Prisma.$AgencySideBarOptionPayload<ExtArgs>[]
       Invitation: Prisma.$InvitationPayload<ExtArgs>[]
       Notification: Prisma.$NotificationPayload<ExtArgs>[]
       Subscription: Prisma.$SubscriptionPayload<ExtArgs>[]
@@ -5070,7 +5070,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     users<T extends Agency$usersArgs<ExtArgs> = {}>(args?: Subset<T, Agency$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     SubAccount<T extends Agency$SubAccountArgs<ExtArgs> = {}>(args?: Subset<T, Agency$SubAccountArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubAccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    SidbarOption<T extends Agency$SidbarOptionArgs<ExtArgs> = {}>(args?: Subset<T, Agency$SidbarOptionArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AgencySideBarOptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    SidebarOption<T extends Agency$SidebarOptionArgs<ExtArgs> = {}>(args?: Subset<T, Agency$SidebarOptionArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AgencySideBarOptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Invitation<T extends Agency$InvitationArgs<ExtArgs> = {}>(args?: Subset<T, Agency$InvitationArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Notification<T extends Agency$NotificationArgs<ExtArgs> = {}>(args?: Subset<T, Agency$NotificationArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Subscription<T extends Agency$SubscriptionArgs<ExtArgs> = {}>(args?: Subset<T, Agency$SubscriptionArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -5511,9 +5511,9 @@ export namespace Prisma {
   }
 
   /**
-   * Agency.SidbarOption
+   * Agency.SidebarOption
    */
-  export type Agency$SidbarOptionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Agency$SidebarOptionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the AgencySideBarOption
      */
@@ -18879,6 +18879,7 @@ export namespace Prisma {
     id: string | null
     email: string | null
     agencyId: string | null
+    avatarUrl: string | null
     status: $Enums.InvitationStatus | null
     role: $Enums.Role | null
   }
@@ -18887,6 +18888,7 @@ export namespace Prisma {
     id: string | null
     email: string | null
     agencyId: string | null
+    avatarUrl: string | null
     status: $Enums.InvitationStatus | null
     role: $Enums.Role | null
   }
@@ -18895,6 +18897,7 @@ export namespace Prisma {
     id: number
     email: number
     agencyId: number
+    avatarUrl: number
     status: number
     role: number
     _all: number
@@ -18905,6 +18908,7 @@ export namespace Prisma {
     id?: true
     email?: true
     agencyId?: true
+    avatarUrl?: true
     status?: true
     role?: true
   }
@@ -18913,6 +18917,7 @@ export namespace Prisma {
     id?: true
     email?: true
     agencyId?: true
+    avatarUrl?: true
     status?: true
     role?: true
   }
@@ -18921,6 +18926,7 @@ export namespace Prisma {
     id?: true
     email?: true
     agencyId?: true
+    avatarUrl?: true
     status?: true
     role?: true
     _all?: true
@@ -19002,6 +19008,7 @@ export namespace Prisma {
     id: string
     email: string
     agencyId: string
+    avatarUrl: string | null
     status: $Enums.InvitationStatus
     role: $Enums.Role
     _count: InvitationCountAggregateOutputType | null
@@ -19027,6 +19034,7 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     agencyId?: boolean
+    avatarUrl?: boolean
     status?: boolean
     role?: boolean
     Agency?: boolean | AgencyDefaultArgs<ExtArgs>
@@ -19038,11 +19046,12 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     agencyId?: boolean
+    avatarUrl?: boolean
     status?: boolean
     role?: boolean
   }
 
-  export type InvitationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "agencyId" | "status" | "role", ExtArgs["result"]["invitation"]>
+  export type InvitationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "agencyId" | "avatarUrl" | "status" | "role", ExtArgs["result"]["invitation"]>
   export type InvitationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Agency?: boolean | AgencyDefaultArgs<ExtArgs>
   }
@@ -19056,6 +19065,7 @@ export namespace Prisma {
       id: string
       email: string
       agencyId: string
+      avatarUrl: string | null
       status: $Enums.InvitationStatus
       role: $Enums.Role
     }, ExtArgs["result"]["invitation"]>
@@ -19431,6 +19441,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Invitation", 'String'>
     readonly email: FieldRef<"Invitation", 'String'>
     readonly agencyId: FieldRef<"Invitation", 'String'>
+    readonly avatarUrl: FieldRef<"Invitation", 'String'>
     readonly status: FieldRef<"Invitation", 'InvitationStatus'>
     readonly role: FieldRef<"Invitation", 'Role'>
   }
@@ -23673,7 +23684,7 @@ export namespace Prisma {
     id: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    notificaiton: string | null
+    notification: string | null
     agencyId: string | null
     subAccountId: string | null
     userId: string | null
@@ -23683,7 +23694,7 @@ export namespace Prisma {
     id: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    notificaiton: string | null
+    notification: string | null
     agencyId: string | null
     subAccountId: string | null
     userId: string | null
@@ -23693,7 +23704,7 @@ export namespace Prisma {
     id: number
     createdAt: number
     updatedAt: number
-    notificaiton: number
+    notification: number
     agencyId: number
     subAccountId: number
     userId: number
@@ -23705,7 +23716,7 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     updatedAt?: true
-    notificaiton?: true
+    notification?: true
     agencyId?: true
     subAccountId?: true
     userId?: true
@@ -23715,7 +23726,7 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     updatedAt?: true
-    notificaiton?: true
+    notification?: true
     agencyId?: true
     subAccountId?: true
     userId?: true
@@ -23725,7 +23736,7 @@ export namespace Prisma {
     id?: true
     createdAt?: true
     updatedAt?: true
-    notificaiton?: true
+    notification?: true
     agencyId?: true
     subAccountId?: true
     userId?: true
@@ -23808,7 +23819,7 @@ export namespace Prisma {
     id: string
     createdAt: Date
     updatedAt: Date
-    notificaiton: string
+    notification: string
     agencyId: string
     subAccountId: string | null
     userId: string
@@ -23835,7 +23846,7 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    notificaiton?: boolean
+    notification?: boolean
     agencyId?: boolean
     subAccountId?: boolean
     userId?: boolean
@@ -23850,13 +23861,13 @@ export namespace Prisma {
     id?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    notificaiton?: boolean
+    notification?: boolean
     agencyId?: boolean
     subAccountId?: boolean
     userId?: boolean
   }
 
-  export type NotificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "notificaiton" | "agencyId" | "subAccountId" | "userId", ExtArgs["result"]["notification"]>
+  export type NotificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "notification" | "agencyId" | "subAccountId" | "userId", ExtArgs["result"]["notification"]>
   export type NotificationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     User?: boolean | UserDefaultArgs<ExtArgs>
     Agency?: boolean | AgencyDefaultArgs<ExtArgs>
@@ -23874,7 +23885,7 @@ export namespace Prisma {
       id: string
       createdAt: Date
       updatedAt: Date
-      notificaiton: string
+      notification: string
       agencyId: string
       subAccountId: string | null
       userId: string
@@ -24253,7 +24264,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Notification", 'String'>
     readonly createdAt: FieldRef<"Notification", 'DateTime'>
     readonly updatedAt: FieldRef<"Notification", 'DateTime'>
-    readonly notificaiton: FieldRef<"Notification", 'String'>
+    readonly notification: FieldRef<"Notification", 'String'>
     readonly agencyId: FieldRef<"Notification", 'String'>
     readonly subAccountId: FieldRef<"Notification", 'String'>
     readonly userId: FieldRef<"Notification", 'String'>
@@ -26850,6 +26861,7 @@ export namespace Prisma {
     id: 'id',
     email: 'email',
     agencyId: 'agencyId',
+    avatarUrl: 'avatarUrl',
     status: 'status',
     role: 'role'
   };
@@ -26913,7 +26925,7 @@ export namespace Prisma {
     id: 'id',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    notificaiton: 'notificaiton',
+    notification: 'notification',
     agencyId: 'agencyId',
     subAccountId: 'subAccountId',
     userId: 'userId'
@@ -27138,7 +27150,8 @@ export namespace Prisma {
   export const InvitationOrderByRelevanceFieldEnum: {
     id: 'id',
     email: 'email',
-    agencyId: 'agencyId'
+    agencyId: 'agencyId',
+    avatarUrl: 'avatarUrl'
   };
 
   export type InvitationOrderByRelevanceFieldEnum = (typeof InvitationOrderByRelevanceFieldEnum)[keyof typeof InvitationOrderByRelevanceFieldEnum]
@@ -27188,7 +27201,7 @@ export namespace Prisma {
 
   export const NotificationOrderByRelevanceFieldEnum: {
     id: 'id',
-    notificaiton: 'notificaiton',
+    notification: 'notification',
     agencyId: 'agencyId',
     subAccountId: 'subAccountId',
     userId: 'userId'
@@ -27413,7 +27426,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Agency"> | Date | string
     users?: UserListRelationFilter
     SubAccount?: SubAccountListRelationFilter
-    SidbarOption?: AgencySideBarOptionListRelationFilter
+    SidebarOption?: AgencySideBarOptionListRelationFilter
     Invitation?: InvitationListRelationFilter
     Notification?: NotificationListRelationFilter
     Subscription?: SubscriptionListRelationFilter
@@ -27439,7 +27452,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     users?: UserOrderByRelationAggregateInput
     SubAccount?: SubAccountOrderByRelationAggregateInput
-    SidbarOption?: AgencySideBarOptionOrderByRelationAggregateInput
+    SidebarOption?: AgencySideBarOptionOrderByRelationAggregateInput
     Invitation?: InvitationOrderByRelationAggregateInput
     Notification?: NotificationOrderByRelationAggregateInput
     Subscription?: SubscriptionOrderByRelationAggregateInput
@@ -27469,7 +27482,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Agency"> | Date | string
     users?: UserListRelationFilter
     SubAccount?: SubAccountListRelationFilter
-    SidbarOption?: AgencySideBarOptionListRelationFilter
+    SidebarOption?: AgencySideBarOptionListRelationFilter
     Invitation?: InvitationListRelationFilter
     Notification?: NotificationListRelationFilter
     Subscription?: SubscriptionListRelationFilter
@@ -28494,6 +28507,7 @@ export namespace Prisma {
     id?: StringFilter<"Invitation"> | string
     email?: StringFilter<"Invitation"> | string
     agencyId?: StringFilter<"Invitation"> | string
+    avatarUrl?: StringNullableFilter<"Invitation"> | string | null
     status?: EnumInvitationStatusFilter<"Invitation"> | $Enums.InvitationStatus
     role?: EnumRoleFilter<"Invitation"> | $Enums.Role
     Agency?: XOR<AgencyScalarRelationFilter, AgencyWhereInput>
@@ -28503,6 +28517,7 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     agencyId?: SortOrder
+    avatarUrl?: SortOrderInput | SortOrder
     status?: SortOrder
     role?: SortOrder
     Agency?: AgencyOrderByWithRelationInput
@@ -28516,6 +28531,7 @@ export namespace Prisma {
     OR?: InvitationWhereInput[]
     NOT?: InvitationWhereInput | InvitationWhereInput[]
     agencyId?: StringFilter<"Invitation"> | string
+    avatarUrl?: StringNullableFilter<"Invitation"> | string | null
     status?: EnumInvitationStatusFilter<"Invitation"> | $Enums.InvitationStatus
     role?: EnumRoleFilter<"Invitation"> | $Enums.Role
     Agency?: XOR<AgencyScalarRelationFilter, AgencyWhereInput>
@@ -28525,6 +28541,7 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     agencyId?: SortOrder
+    avatarUrl?: SortOrderInput | SortOrder
     status?: SortOrder
     role?: SortOrder
     _count?: InvitationCountOrderByAggregateInput
@@ -28539,6 +28556,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Invitation"> | string
     email?: StringWithAggregatesFilter<"Invitation"> | string
     agencyId?: StringWithAggregatesFilter<"Invitation"> | string
+    avatarUrl?: StringNullableWithAggregatesFilter<"Invitation"> | string | null
     status?: EnumInvitationStatusWithAggregatesFilter<"Invitation"> | $Enums.InvitationStatus
     role?: EnumRoleWithAggregatesFilter<"Invitation"> | $Enums.Role
   }
@@ -28819,7 +28837,7 @@ export namespace Prisma {
     id?: StringFilter<"Notification"> | string
     createdAt?: DateTimeFilter<"Notification"> | Date | string
     updatedAt?: DateTimeFilter<"Notification"> | Date | string
-    notificaiton?: StringFilter<"Notification"> | string
+    notification?: StringFilter<"Notification"> | string
     agencyId?: StringFilter<"Notification"> | string
     subAccountId?: StringNullableFilter<"Notification"> | string | null
     userId?: StringFilter<"Notification"> | string
@@ -28832,7 +28850,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    notificaiton?: SortOrder
+    notification?: SortOrder
     agencyId?: SortOrder
     subAccountId?: SortOrderInput | SortOrder
     userId?: SortOrder
@@ -28849,7 +28867,7 @@ export namespace Prisma {
     NOT?: NotificationWhereInput | NotificationWhereInput[]
     createdAt?: DateTimeFilter<"Notification"> | Date | string
     updatedAt?: DateTimeFilter<"Notification"> | Date | string
-    notificaiton?: StringFilter<"Notification"> | string
+    notification?: StringFilter<"Notification"> | string
     agencyId?: StringFilter<"Notification"> | string
     subAccountId?: StringNullableFilter<"Notification"> | string | null
     userId?: StringFilter<"Notification"> | string
@@ -28862,7 +28880,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    notificaiton?: SortOrder
+    notification?: SortOrder
     agencyId?: SortOrder
     subAccountId?: SortOrderInput | SortOrder
     userId?: SortOrder
@@ -28878,7 +28896,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Notification"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Notification"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Notification"> | Date | string
-    notificaiton?: StringWithAggregatesFilter<"Notification"> | string
+    notification?: StringWithAggregatesFilter<"Notification"> | string
     agencyId?: StringWithAggregatesFilter<"Notification"> | string
     subAccountId?: StringNullableWithAggregatesFilter<"Notification"> | string | null
     userId?: StringWithAggregatesFilter<"Notification"> | string
@@ -29143,7 +29161,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationCreateNestedManyWithoutAgencyInput
     Notification?: NotificationCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionCreateNestedManyWithoutAgencyInput
@@ -29169,7 +29187,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationUncheckedCreateNestedManyWithoutAgencyInput
     Notification?: NotificationUncheckedCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionUncheckedCreateNestedManyWithoutAgencyInput
@@ -29195,7 +29213,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUpdateManyWithoutAgencyNestedInput
@@ -29221,7 +29239,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUncheckedUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUncheckedUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUncheckedUpdateManyWithoutAgencyNestedInput
@@ -30304,6 +30322,7 @@ export namespace Prisma {
   export type InvitationCreateInput = {
     id?: string
     email: string
+    avatarUrl?: string | null
     status?: $Enums.InvitationStatus
     role?: $Enums.Role
     Agency: AgencyCreateNestedOneWithoutInvitationInput
@@ -30313,6 +30332,7 @@ export namespace Prisma {
     id?: string
     email: string
     agencyId: string
+    avatarUrl?: string | null
     status?: $Enums.InvitationStatus
     role?: $Enums.Role
   }
@@ -30320,6 +30340,7 @@ export namespace Prisma {
   export type InvitationUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     Agency?: AgencyUpdateOneRequiredWithoutInvitationNestedInput
@@ -30329,6 +30350,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
@@ -30337,6 +30359,7 @@ export namespace Prisma {
     id?: string
     email: string
     agencyId: string
+    avatarUrl?: string | null
     status?: $Enums.InvitationStatus
     role?: $Enums.Role
   }
@@ -30344,6 +30367,7 @@ export namespace Prisma {
   export type InvitationUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
@@ -30352,6 +30376,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
@@ -30569,7 +30594,7 @@ export namespace Prisma {
     name?: string
     link?: string
     icon?: $Enums.Icon
-    Agency?: AgencyCreateNestedOneWithoutSidbarOptionInput
+    Agency?: AgencyCreateNestedOneWithoutSidebarOptionInput
   }
 
   export type AgencySideBarOptionUncheckedCreateInput = {
@@ -30589,7 +30614,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     icon?: EnumIconFieldUpdateOperationsInput | $Enums.Icon
-    Agency?: AgencyUpdateOneWithoutSidbarOptionNestedInput
+    Agency?: AgencyUpdateOneWithoutSidebarOptionNestedInput
   }
 
   export type AgencySideBarOptionUncheckedUpdateInput = {
@@ -30635,7 +30660,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     User: UserCreateNestedOneWithoutNotificationInput
     Agency: AgencyCreateNestedOneWithoutNotificationInput
     SubAccount?: SubAccountCreateNestedOneWithoutNotificationInput
@@ -30645,7 +30670,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     agencyId: string
     subAccountId?: string | null
     userId: string
@@ -30655,7 +30680,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutNotificationNestedInput
     Agency?: AgencyUpdateOneRequiredWithoutNotificationNestedInput
     SubAccount?: SubAccountUpdateOneWithoutNotificationNestedInput
@@ -30665,7 +30690,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
     subAccountId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
@@ -30675,7 +30700,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     agencyId: string
     subAccountId?: string | null
     userId: string
@@ -30685,14 +30710,14 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
   }
 
   export type NotificationUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
     subAccountId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
@@ -32012,6 +32037,7 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     agencyId?: SortOrder
+    avatarUrl?: SortOrder
     status?: SortOrder
     role?: SortOrder
   }
@@ -32020,6 +32046,7 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     agencyId?: SortOrder
+    avatarUrl?: SortOrder
     status?: SortOrder
     role?: SortOrder
   }
@@ -32028,6 +32055,7 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     agencyId?: SortOrder
+    avatarUrl?: SortOrder
     status?: SortOrder
     role?: SortOrder
   }
@@ -32216,7 +32244,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    notificaiton?: SortOrder
+    notification?: SortOrder
     agencyId?: SortOrder
     subAccountId?: SortOrder
     userId?: SortOrder
@@ -32226,7 +32254,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    notificaiton?: SortOrder
+    notification?: SortOrder
     agencyId?: SortOrder
     subAccountId?: SortOrder
     userId?: SortOrder
@@ -32236,7 +32264,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    notificaiton?: SortOrder
+    notification?: SortOrder
     agencyId?: SortOrder
     subAccountId?: SortOrder
     userId?: SortOrder
@@ -33963,20 +33991,20 @@ export namespace Prisma {
     update?: XOR<XOR<FunnelUpdateToOneWithWhereWithoutFunnelPagesInput, FunnelUpdateWithoutFunnelPagesInput>, FunnelUncheckedUpdateWithoutFunnelPagesInput>
   }
 
-  export type AgencyCreateNestedOneWithoutSidbarOptionInput = {
-    create?: XOR<AgencyCreateWithoutSidbarOptionInput, AgencyUncheckedCreateWithoutSidbarOptionInput>
-    connectOrCreate?: AgencyCreateOrConnectWithoutSidbarOptionInput
+  export type AgencyCreateNestedOneWithoutSidebarOptionInput = {
+    create?: XOR<AgencyCreateWithoutSidebarOptionInput, AgencyUncheckedCreateWithoutSidebarOptionInput>
+    connectOrCreate?: AgencyCreateOrConnectWithoutSidebarOptionInput
     connect?: AgencyWhereUniqueInput
   }
 
-  export type AgencyUpdateOneWithoutSidbarOptionNestedInput = {
-    create?: XOR<AgencyCreateWithoutSidbarOptionInput, AgencyUncheckedCreateWithoutSidbarOptionInput>
-    connectOrCreate?: AgencyCreateOrConnectWithoutSidbarOptionInput
-    upsert?: AgencyUpsertWithoutSidbarOptionInput
+  export type AgencyUpdateOneWithoutSidebarOptionNestedInput = {
+    create?: XOR<AgencyCreateWithoutSidebarOptionInput, AgencyUncheckedCreateWithoutSidebarOptionInput>
+    connectOrCreate?: AgencyCreateOrConnectWithoutSidebarOptionInput
+    upsert?: AgencyUpsertWithoutSidebarOptionInput
     disconnect?: AgencyWhereInput | boolean
     delete?: AgencyWhereInput | boolean
     connect?: AgencyWhereUniqueInput
-    update?: XOR<XOR<AgencyUpdateToOneWithWhereWithoutSidbarOptionInput, AgencyUpdateWithoutSidbarOptionInput>, AgencyUncheckedUpdateWithoutSidbarOptionInput>
+    update?: XOR<XOR<AgencyUpdateToOneWithWhereWithoutSidebarOptionInput, AgencyUpdateWithoutSidebarOptionInput>, AgencyUncheckedUpdateWithoutSidebarOptionInput>
   }
 
   export type UserCreateNestedOneWithoutNotificationInput = {
@@ -34359,7 +34387,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     SubAccount?: SubAccountCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationCreateNestedManyWithoutAgencyInput
     Notification?: NotificationCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionCreateNestedManyWithoutAgencyInput
@@ -34384,7 +34412,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     SubAccount?: SubAccountUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationUncheckedCreateNestedManyWithoutAgencyInput
     Notification?: NotificationUncheckedCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionUncheckedCreateNestedManyWithoutAgencyInput
@@ -34458,7 +34486,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     Agency: AgencyCreateNestedOneWithoutNotificationInput
     SubAccount?: SubAccountCreateNestedOneWithoutNotificationInput
   }
@@ -34467,7 +34495,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     agencyId: string
     subAccountId?: string | null
   }
@@ -34511,7 +34539,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     SubAccount?: SubAccountUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUpdateManyWithoutAgencyNestedInput
@@ -34536,7 +34564,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     SubAccount?: SubAccountUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUncheckedUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUncheckedUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUncheckedUpdateManyWithoutAgencyNestedInput
@@ -34624,7 +34652,7 @@ export namespace Prisma {
     id?: StringFilter<"Notification"> | string
     createdAt?: DateTimeFilter<"Notification"> | Date | string
     updatedAt?: DateTimeFilter<"Notification"> | Date | string
-    notificaiton?: StringFilter<"Notification"> | string
+    notification?: StringFilter<"Notification"> | string
     agencyId?: StringFilter<"Notification"> | string
     subAccountId?: StringNullableFilter<"Notification"> | string | null
     userId?: StringFilter<"Notification"> | string
@@ -34759,6 +34787,7 @@ export namespace Prisma {
   export type InvitationCreateWithoutAgencyInput = {
     id?: string
     email: string
+    avatarUrl?: string | null
     status?: $Enums.InvitationStatus
     role?: $Enums.Role
   }
@@ -34766,6 +34795,7 @@ export namespace Prisma {
   export type InvitationUncheckedCreateWithoutAgencyInput = {
     id?: string
     email: string
+    avatarUrl?: string | null
     status?: $Enums.InvitationStatus
     role?: $Enums.Role
   }
@@ -34784,7 +34814,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     User: UserCreateNestedOneWithoutNotificationInput
     SubAccount?: SubAccountCreateNestedOneWithoutNotificationInput
   }
@@ -34793,7 +34823,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     subAccountId?: string | null
     userId: string
   }
@@ -34990,6 +35020,7 @@ export namespace Prisma {
     id?: StringFilter<"Invitation"> | string
     email?: StringFilter<"Invitation"> | string
     agencyId?: StringFilter<"Invitation"> | string
+    avatarUrl?: StringNullableFilter<"Invitation"> | string | null
     status?: EnumInvitationStatusFilter<"Invitation"> | $Enums.InvitationStatus
     role?: EnumRoleFilter<"Invitation"> | $Enums.Role
   }
@@ -35090,7 +35121,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     users?: UserCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationCreateNestedManyWithoutAgencyInput
     Notification?: NotificationCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionCreateNestedManyWithoutAgencyInput
@@ -35115,7 +35146,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationUncheckedCreateNestedManyWithoutAgencyInput
     Notification?: NotificationUncheckedCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionUncheckedCreateNestedManyWithoutAgencyInput
@@ -35389,7 +35420,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     User: UserCreateNestedOneWithoutNotificationInput
     Agency: AgencyCreateNestedOneWithoutNotificationInput
   }
@@ -35398,7 +35429,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     agencyId: string
     userId: string
   }
@@ -35442,7 +35473,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUpdateManyWithoutAgencyNestedInput
@@ -35467,7 +35498,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUncheckedUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUncheckedUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUncheckedUpdateManyWithoutAgencyNestedInput
@@ -37635,7 +37666,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Notification?: NotificationCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionCreateNestedManyWithoutAgencyInput
     AddOns?: AddOnsCreateNestedManyWithoutAgencyInput
@@ -37660,7 +37691,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Notification?: NotificationUncheckedCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionUncheckedCreateNestedManyWithoutAgencyInput
     AddOns?: AddOnsUncheckedCreateNestedManyWithoutAgencyInput
@@ -37701,7 +37732,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUpdateManyWithoutAgencyNestedInput
     AddOns?: AddOnsUpdateManyWithoutAgencyNestedInput
@@ -37726,7 +37757,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUncheckedUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUncheckedUpdateManyWithoutAgencyNestedInput
     AddOns?: AddOnsUncheckedUpdateManyWithoutAgencyNestedInput
@@ -38064,7 +38095,7 @@ export namespace Prisma {
     ClassName?: ClassNameUncheckedUpdateManyWithoutFunnelNestedInput
   }
 
-  export type AgencyCreateWithoutSidbarOptionInput = {
+  export type AgencyCreateWithoutSidebarOptionInput = {
     id?: string
     connectAccountId?: string | null
     customerId?: string
@@ -38089,7 +38120,7 @@ export namespace Prisma {
     AddOns?: AddOnsCreateNestedManyWithoutAgencyInput
   }
 
-  export type AgencyUncheckedCreateWithoutSidbarOptionInput = {
+  export type AgencyUncheckedCreateWithoutSidebarOptionInput = {
     id?: string
     connectAccountId?: string | null
     customerId?: string
@@ -38114,23 +38145,23 @@ export namespace Prisma {
     AddOns?: AddOnsUncheckedCreateNestedManyWithoutAgencyInput
   }
 
-  export type AgencyCreateOrConnectWithoutSidbarOptionInput = {
+  export type AgencyCreateOrConnectWithoutSidebarOptionInput = {
     where: AgencyWhereUniqueInput
-    create: XOR<AgencyCreateWithoutSidbarOptionInput, AgencyUncheckedCreateWithoutSidbarOptionInput>
+    create: XOR<AgencyCreateWithoutSidebarOptionInput, AgencyUncheckedCreateWithoutSidebarOptionInput>
   }
 
-  export type AgencyUpsertWithoutSidbarOptionInput = {
-    update: XOR<AgencyUpdateWithoutSidbarOptionInput, AgencyUncheckedUpdateWithoutSidbarOptionInput>
-    create: XOR<AgencyCreateWithoutSidbarOptionInput, AgencyUncheckedCreateWithoutSidbarOptionInput>
+  export type AgencyUpsertWithoutSidebarOptionInput = {
+    update: XOR<AgencyUpdateWithoutSidebarOptionInput, AgencyUncheckedUpdateWithoutSidebarOptionInput>
+    create: XOR<AgencyCreateWithoutSidebarOptionInput, AgencyUncheckedCreateWithoutSidebarOptionInput>
     where?: AgencyWhereInput
   }
 
-  export type AgencyUpdateToOneWithWhereWithoutSidbarOptionInput = {
+  export type AgencyUpdateToOneWithWhereWithoutSidebarOptionInput = {
     where?: AgencyWhereInput
-    data: XOR<AgencyUpdateWithoutSidbarOptionInput, AgencyUncheckedUpdateWithoutSidbarOptionInput>
+    data: XOR<AgencyUpdateWithoutSidebarOptionInput, AgencyUncheckedUpdateWithoutSidebarOptionInput>
   }
 
-  export type AgencyUpdateWithoutSidbarOptionInput = {
+  export type AgencyUpdateWithoutSidebarOptionInput = {
     id?: StringFieldUpdateOperationsInput | string
     connectAccountId?: NullableStringFieldUpdateOperationsInput | string | null
     customerId?: StringFieldUpdateOperationsInput | string
@@ -38155,7 +38186,7 @@ export namespace Prisma {
     AddOns?: AddOnsUpdateManyWithoutAgencyNestedInput
   }
 
-  export type AgencyUncheckedUpdateWithoutSidbarOptionInput = {
+  export type AgencyUncheckedUpdateWithoutSidebarOptionInput = {
     id?: StringFieldUpdateOperationsInput | string
     connectAccountId?: NullableStringFieldUpdateOperationsInput | string | null
     customerId?: StringFieldUpdateOperationsInput | string
@@ -38230,7 +38261,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionCreateNestedManyWithoutAgencyInput
     AddOns?: AddOnsCreateNestedManyWithoutAgencyInput
@@ -38255,7 +38286,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationUncheckedCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionUncheckedCreateNestedManyWithoutAgencyInput
     AddOns?: AddOnsUncheckedCreateNestedManyWithoutAgencyInput
@@ -38390,7 +38421,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUpdateManyWithoutAgencyNestedInput
     AddOns?: AddOnsUpdateManyWithoutAgencyNestedInput
@@ -38415,7 +38446,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUncheckedUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUncheckedUpdateManyWithoutAgencyNestedInput
     AddOns?: AddOnsUncheckedUpdateManyWithoutAgencyNestedInput
@@ -38503,7 +38534,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationCreateNestedManyWithoutAgencyInput
     Notification?: NotificationCreateNestedManyWithoutAgencyInput
     AddOns?: AddOnsCreateNestedManyWithoutAgencyInput
@@ -38528,7 +38559,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationUncheckedCreateNestedManyWithoutAgencyInput
     Notification?: NotificationUncheckedCreateNestedManyWithoutAgencyInput
     AddOns?: AddOnsUncheckedCreateNestedManyWithoutAgencyInput
@@ -38569,7 +38600,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUpdateManyWithoutAgencyNestedInput
     AddOns?: AddOnsUpdateManyWithoutAgencyNestedInput
@@ -38594,7 +38625,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUncheckedUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUncheckedUpdateManyWithoutAgencyNestedInput
     AddOns?: AddOnsUncheckedUpdateManyWithoutAgencyNestedInput
@@ -38619,7 +38650,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationCreateNestedManyWithoutAgencyInput
     Notification?: NotificationCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionCreateNestedManyWithoutAgencyInput
@@ -38644,7 +38675,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     users?: UserUncheckedCreateNestedManyWithoutAgencyInput
     SubAccount?: SubAccountUncheckedCreateNestedManyWithoutAgencyInput
-    SidbarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
+    SidebarOption?: AgencySideBarOptionUncheckedCreateNestedManyWithoutAgencyInput
     Invitation?: InvitationUncheckedCreateNestedManyWithoutAgencyInput
     Notification?: NotificationUncheckedCreateNestedManyWithoutAgencyInput
     Subscription?: SubscriptionUncheckedCreateNestedManyWithoutAgencyInput
@@ -38685,7 +38716,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUpdateManyWithoutAgencyNestedInput
@@ -38710,7 +38741,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     users?: UserUncheckedUpdateManyWithoutAgencyNestedInput
     SubAccount?: SubAccountUncheckedUpdateManyWithoutAgencyNestedInput
-    SidbarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
+    SidebarOption?: AgencySideBarOptionUncheckedUpdateManyWithoutAgencyNestedInput
     Invitation?: InvitationUncheckedUpdateManyWithoutAgencyNestedInput
     Notification?: NotificationUncheckedUpdateManyWithoutAgencyNestedInput
     Subscription?: SubscriptionUncheckedUpdateManyWithoutAgencyNestedInput
@@ -38738,7 +38769,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     agencyId: string
     subAccountId?: string | null
   }
@@ -38803,7 +38834,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     Agency?: AgencyUpdateOneRequiredWithoutNotificationNestedInput
     SubAccount?: SubAccountUpdateOneWithoutNotificationNestedInput
   }
@@ -38812,7 +38843,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
     subAccountId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -38821,7 +38852,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
     subAccountId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -38864,6 +38895,7 @@ export namespace Prisma {
   export type InvitationCreateManyAgencyInput = {
     id?: string
     email: string
+    avatarUrl?: string | null
     status?: $Enums.InvitationStatus
     role?: $Enums.Role
   }
@@ -38872,7 +38904,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     subAccountId?: string | null
     userId: string
   }
@@ -39033,6 +39065,7 @@ export namespace Prisma {
   export type InvitationUpdateWithoutAgencyInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
@@ -39040,6 +39073,7 @@ export namespace Prisma {
   export type InvitationUncheckedUpdateWithoutAgencyInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
@@ -39047,6 +39081,7 @@ export namespace Prisma {
   export type InvitationUncheckedUpdateManyWithoutAgencyInput = {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
+    avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumInvitationStatusFieldUpdateOperationsInput | $Enums.InvitationStatus
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
@@ -39055,7 +39090,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutNotificationNestedInput
     SubAccount?: SubAccountUpdateOneWithoutNotificationNestedInput
   }
@@ -39064,7 +39099,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     subAccountId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -39073,7 +39108,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     subAccountId?: NullableStringFieldUpdateOperationsInput | string | null
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -39224,7 +39259,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    notificaiton: string
+    notification: string
     agencyId: string
     userId: string
   }
@@ -39477,7 +39512,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     User?: UserUpdateOneRequiredWithoutNotificationNestedInput
     Agency?: AgencyUpdateOneRequiredWithoutNotificationNestedInput
   }
@@ -39486,7 +39521,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -39495,7 +39530,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    notificaiton?: StringFieldUpdateOperationsInput | string
+    notification?: StringFieldUpdateOperationsInput | string
     agencyId?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
   }
