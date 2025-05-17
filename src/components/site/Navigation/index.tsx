@@ -1,4 +1,4 @@
-import { User } from '@clerk/nextjs/server'
+import { currentUser, User } from '@clerk/nextjs/server'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,15 +9,17 @@ type Props = {
     user?: null | User
 }
 
-const Navigation = ({ user }: Props) => {
+const Navigation = async () => {
+    const user: Props['user'] = await currentUser()
   return (
-    <div className='p-4 flex items-center justify-between fixed top-0 right-0 left-0 z-10 bg-background'>
+    <div className='p-4 flex items-center justify-between fixed top-0 right-0 left-0 z-50 bg-background'>
         <aside className='flex items-center gap-2 h-10'>
             <Image
                 src={'/logo.png'}
                 alt="logo"
                 height={40}
                 width={40}
+                className='h-5 w-16'
             />
             
         </aside>
@@ -30,9 +32,9 @@ const Navigation = ({ user }: Props) => {
             </ul>
         </nav>
         <aside className='flex gap-2 items-center'>
-            <Link href={'/sign-in'} className='bg-primary text-white p-2 px-4 rounded-md hover:bg-primary/80'>
+            {!user && <Link href={'/sign-in'} className='bg-primary text-white p-2 px-4 rounded-md hover:bg-primary/80'>
                 Login
-            </Link>
+            </Link>}
             <UserButton />
             <ModeToggle />
         </aside>

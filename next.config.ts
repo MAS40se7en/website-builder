@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
       'utfs.io',
       'img.clerk.com',
       'subdomain',
-      'files.stripe.com'
+      'files.stripe.com',
+      'r066yr7fzy.ufs.sh'
     ]
   }
 };

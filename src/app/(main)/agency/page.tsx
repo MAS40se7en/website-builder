@@ -1,7 +1,8 @@
 import AgencyDetails from '@/components/forms/AgencyDetails'
-import { Plan } from '@/generated/prisma'
+import { Plan } from '@/app/generated/prisma'
 import { getAuthUserDetails, verifyAndAcceptInvitation } from '@/lib/queries'
 import { currentUser } from '@clerk/nextjs/server'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
@@ -9,8 +10,6 @@ const page = async ({ searchParams }: { searchParams: { plan: Plan; state: strin
 
 
     const agencyId = await verifyAndAcceptInvitation()
-
-    console.log(agencyId)
 
     //get user details
     const user = await getAuthUserDetails()
@@ -45,8 +44,11 @@ const page = async ({ searchParams }: { searchParams: { plan: Plan; state: strin
 
     return (
         <div className='flex justify-center items-center mt-4'>
-            <div className='max-w-[850px] border-[1px] p-4 rounded-xl'>
-                <h1 className='text-4xl'>Create an Agency</h1>
+            <div className='max-w-[850px] border-[1px] p-4 rounded-xl flex flex-col gap-5'>
+                <div className='flex justify-between items-center'>
+                    <h1 className='text-4xl text-center font-semibold'>Create an Agency</h1>
+                    <Link href='/' className='bg-foreground text-background py-2 px-3 rounded-md font-semibold hover:bg-foreground/90 active:bg-foreground/80 cursor-pointer'>back home</Link>
+                </div>
                 <AgencyDetails data={{companyEmail:authUser?.emailAddresses[0].emailAddress}} />
             </div>
         </div>

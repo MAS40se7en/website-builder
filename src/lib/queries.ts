@@ -1,9 +1,10 @@
 'use server';
 
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
-import prisma from "./db";
+import prisma from "./prisma";
 import { redirect } from "next/navigation";
-import { Agency, User } from "@/generated/prisma";
+import { Agency, Icon, Plan, User } from "@/app/generated/prisma";
+import { icons } from "./constants";
 
 const client = await clerkClient();
 
@@ -225,4 +226,105 @@ export const updateAgencyDetails = async (agencyId: string, agencyDetails: Parti
     })
 
     return response
+}
+
+export const deleteAgency = async (agencyId: string) => {
+    const response = await prisma.agency.delete({
+        where: {
+            id: agencyId
+        }
+    })
+
+    return response
+}
+
+export const initUser = async (newUser: Partial<User>) => {
+    const user = await currentUser();
+    
+    if (!user) {
+        return
+    }
+
+    const userData = await prisma.user.upsert({
+        where: {
+            email: user.emailAddresses[0].emailAddress,
+        },
+        update: newUser,
+        create: {
+            id: user.id,
+            avatarUrl: user.imageUrl,
+            email: user.emailAddresses[0].emailAddress,
+            name: `${user.firstName} ${user.lastName}`,
+            role: newUser.role || 'SUBACCOUNT_USER',
+        },
+    })
+
+    await client.users.updateUserMetadata(user.id, {
+        privateMetadata: {
+            role: newUser.role || "SUBACCOUNT_USER"
+        }
+    })
+
+    return userData
+}
+
+export const upsertAgency = async (agency: Agency, price?: Plan) => {
+    if (!agency.companyEmail) {
+        return null
+    }
+
+    // TODO: get appropriate icons
+    try {
+        const agencyDetails = await prisma.agency.upsert({
+            where: {
+                id: agency.id,
+            },
+            update: agency,
+            create: {
+                users: {
+                    connect: { email: agency.companyEmail },
+                },
+                ...agency,
+                SidebarOption: {
+                    create: [
+                        {
+                            name: "Dashboard",
+                            icon: Icon.category,
+                            link: `/agency/${agency.id}`
+                        },
+                        {
+                            name: "Launchpad",
+                            icon: Icon.clipboardIcon,
+                            link: `/agency/${agency.id}/launchpad`
+                        },
+                        {
+                            name: "Billing",
+                            icon: Icon.payment,
+                            link: `/agency/${agency.id}/billing`
+                        },
+                        {
+                            name: "Settings",
+                            icon: Icon.settings,
+                            link: `/agency/${agency.id}/settings`
+                        },
+                        {
+                            name: "Sub Account",
+                            icon: Icon.person,
+                            link: `/agency/${agency.id}/all-subaccounts`
+                        },
+                        {
+                            name: "Team",
+                            icon: Icon.shield,
+                            link: `/agency/${agency.id}/team`
+                        }
+                    ]
+                }
+            }
+        })
+
+        return agencyDetails
+    } catch (error) {
+        console.log("Error: could not create customer", error)
+
+    }
 }

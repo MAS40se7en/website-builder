@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <section className="h-full w-full pt-36 relative flex items-center justify-center flex-col bg-black">

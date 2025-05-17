@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  output   = "../src/app/generated/prisma"
 }
 
 datasource db {
@@ -75,14 +75,13 @@ model User {
 model Agency {
   id               String                @id @default(uuid())
   connectAccountId String?               @default("")
-  customerId       String                @default("")
   name             String
   agencyLogo       String                @db.Text
   companyEmail     String                @db.Text
   companyPhone     String
   whiteLabel       Boolean               @default(true)
   address          String
-  City             String
+  city             String
   zipCode          String
   state            String
   country          String

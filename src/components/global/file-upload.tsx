@@ -21,10 +21,12 @@ const FileUpload = ({
             <div className="flex flex-col justify-center items-center">
                 {type !== 'pdf' ? (
                     <div className='relative w-40 h-40'>
-                        <Image 
+                        <Image
                             src={value}
                             alt='uploaded image'
-                            className='object-container'
+                            width={100}
+                            height={100}
+                            className='object-contain'
                         />
                     </div>
                 ) : (
@@ -42,13 +44,20 @@ const FileUpload = ({
             </div>
         )
     }
-  return (
-    <div className='w-full bg-muted/30'>
-        <UploadDropzone endpoint={apiEndpoint} onClientUploadComplete={(res) => {
-            onChange(res?.[0].url)
-        }} onUploadError={(err) => console.log(err)} />
-    </div>
-  )
+    return (
+        <div className='w-full bg-muted/30'>
+            <UploadDropzone
+                endpoint={apiEndpoint}
+                onClientUploadComplete={(res) => {
+                    // Do something with the response
+                    onChange(res?.[0].ufsUrl);
+                }}
+                onUploadError={(error: Error) => {
+                    console.log(`ERROR! ${error.message}`);
+                }}
+            />
+        </div>
+    )
 }
 
 export default FileUpload
