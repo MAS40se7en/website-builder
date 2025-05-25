@@ -105,6 +105,7 @@ model SubAccount {
   createdAt        DateTime                  @default(now())
   updatedAt        DateTime                  @updatedAt
   companyEmail     String                    @db.Text
+  companyPhone     String
   goal             Int                       @default(5)
   address          String
   city             String

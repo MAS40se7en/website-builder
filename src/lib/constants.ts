@@ -40,7 +40,7 @@ export const pricingCards = [
     }
 ]
 
-type Icon = {
+export type Icon = {
     value: string,
     label: string,
     icon: IconifyIconProps["icon"]

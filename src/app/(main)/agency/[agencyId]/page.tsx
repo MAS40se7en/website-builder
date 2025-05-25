@@ -1,5 +1,7 @@
-const page = ({params}: {params: {agencyId: string}}) => {
-  return <div>{params.agencyId}</div>
+const page = async ({params}: {params: {agencyId: string}}) => {
+
+  const agencyId =  await params?.agencyId
+  return <div>{agencyId}</div>
 }
 
 export default page

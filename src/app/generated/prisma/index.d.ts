@@ -5666,6 +5666,7 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     companyEmail: string | null
+    companyPhone: string | null
     goal: number | null
     address: string | null
     city: string | null
@@ -5683,6 +5684,7 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     companyEmail: string | null
+    companyPhone: string | null
     goal: number | null
     address: string | null
     city: string | null
@@ -5700,6 +5702,7 @@ export namespace Prisma {
     createdAt: number
     updatedAt: number
     companyEmail: number
+    companyPhone: number
     goal: number
     address: number
     city: number
@@ -5727,6 +5730,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     companyEmail?: true
+    companyPhone?: true
     goal?: true
     address?: true
     city?: true
@@ -5744,6 +5748,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     companyEmail?: true
+    companyPhone?: true
     goal?: true
     address?: true
     city?: true
@@ -5761,6 +5766,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     companyEmail?: true
+    companyPhone?: true
     goal?: true
     address?: true
     city?: true
@@ -5865,6 +5871,7 @@ export namespace Prisma {
     createdAt: Date
     updatedAt: Date
     companyEmail: string
+    companyPhone: string
     goal: number
     address: string
     city: string
@@ -5901,6 +5908,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     companyEmail?: boolean
+    companyPhone?: boolean
     goal?: boolean
     address?: boolean
     city?: boolean
@@ -5932,6 +5940,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     companyEmail?: boolean
+    companyPhone?: boolean
     goal?: boolean
     address?: boolean
     city?: boolean
@@ -5941,7 +5950,7 @@ export namespace Prisma {
     AgencyId?: boolean
   }
 
-  export type SubAccountOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "connectAccountId" | "name" | "subAccountLogo" | "createdAt" | "updatedAt" | "companyEmail" | "goal" | "address" | "city" | "zipCode" | "state" | "country" | "AgencyId", ExtArgs["result"]["subAccount"]>
+  export type SubAccountOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "connectAccountId" | "name" | "subAccountLogo" | "createdAt" | "updatedAt" | "companyEmail" | "companyPhone" | "goal" | "address" | "city" | "zipCode" | "state" | "country" | "AgencyId", ExtArgs["result"]["subAccount"]>
   export type SubAccountInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Agency?: boolean | AgencyDefaultArgs<ExtArgs>
     SidebarOption?: boolean | SubAccount$SidebarOptionArgs<ExtArgs>
@@ -5980,6 +5989,7 @@ export namespace Prisma {
       createdAt: Date
       updatedAt: Date
       companyEmail: string
+      companyPhone: string
       goal: number
       address: string
       city: string
@@ -6374,6 +6384,7 @@ export namespace Prisma {
     readonly createdAt: FieldRef<"SubAccount", 'DateTime'>
     readonly updatedAt: FieldRef<"SubAccount", 'DateTime'>
     readonly companyEmail: FieldRef<"SubAccount", 'String'>
+    readonly companyPhone: FieldRef<"SubAccount", 'String'>
     readonly goal: FieldRef<"SubAccount", 'Int'>
     readonly address: FieldRef<"SubAccount", 'String'>
     readonly city: FieldRef<"SubAccount", 'String'>
@@ -26678,6 +26689,7 @@ export namespace Prisma {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     companyEmail: 'companyEmail',
+    companyPhone: 'companyPhone',
     goal: 'goal',
     address: 'address',
     city: 'city',
@@ -27002,6 +27014,7 @@ export namespace Prisma {
     name: 'name',
     subAccountLogo: 'subAccountLogo',
     companyEmail: 'companyEmail',
+    companyPhone: 'companyPhone',
     address: 'address',
     city: 'city',
     zipCode: 'zipCode',
@@ -27528,6 +27541,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"SubAccount"> | Date | string
     updatedAt?: DateTimeFilter<"SubAccount"> | Date | string
     companyEmail?: StringFilter<"SubAccount"> | string
+    companyPhone?: StringFilter<"SubAccount"> | string
     goal?: IntFilter<"SubAccount"> | number
     address?: StringFilter<"SubAccount"> | string
     city?: StringFilter<"SubAccount"> | string
@@ -27556,6 +27570,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     companyEmail?: SortOrder
+    companyPhone?: SortOrder
     goal?: SortOrder
     address?: SortOrder
     city?: SortOrder
@@ -27588,6 +27603,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"SubAccount"> | Date | string
     updatedAt?: DateTimeFilter<"SubAccount"> | Date | string
     companyEmail?: StringFilter<"SubAccount"> | string
+    companyPhone?: StringFilter<"SubAccount"> | string
     goal?: IntFilter<"SubAccount"> | number
     address?: StringFilter<"SubAccount"> | string
     city?: StringFilter<"SubAccount"> | string
@@ -27616,6 +27632,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     companyEmail?: SortOrder
+    companyPhone?: SortOrder
     goal?: SortOrder
     address?: SortOrder
     city?: SortOrder
@@ -27641,6 +27658,7 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"SubAccount"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"SubAccount"> | Date | string
     companyEmail?: StringWithAggregatesFilter<"SubAccount"> | string
+    companyPhone?: StringWithAggregatesFilter<"SubAccount"> | string
     goal?: IntWithAggregatesFilter<"SubAccount"> | number
     address?: StringWithAggregatesFilter<"SubAccount"> | string
     city?: StringWithAggregatesFilter<"SubAccount"> | string
@@ -29286,6 +29304,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -29313,6 +29332,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -29340,6 +29360,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -29367,6 +29388,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -29394,6 +29416,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -29411,6 +29434,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -29427,6 +29451,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -31318,6 +31343,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     companyEmail?: SortOrder
+    companyPhone?: SortOrder
     goal?: SortOrder
     address?: SortOrder
     city?: SortOrder
@@ -31339,6 +31365,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     companyEmail?: SortOrder
+    companyPhone?: SortOrder
     goal?: SortOrder
     address?: SortOrder
     city?: SortOrder
@@ -31356,6 +31383,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     companyEmail?: SortOrder
+    companyPhone?: SortOrder
     goal?: SortOrder
     address?: SortOrder
     city?: SortOrder
@@ -34670,6 +34698,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -34696,6 +34725,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -34927,6 +34957,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"SubAccount"> | Date | string
     updatedAt?: DateTimeFilter<"SubAccount"> | Date | string
     companyEmail?: StringFilter<"SubAccount"> | string
+    companyPhone?: StringFilter<"SubAccount"> | string
     goal?: IntFilter<"SubAccount"> | number
     address?: StringFilter<"SubAccount"> | string
     city?: StringFilter<"SubAccount"> | string
@@ -35739,6 +35770,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -35765,6 +35797,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -35838,6 +35871,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -35864,6 +35898,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -35934,6 +35969,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -35960,6 +35996,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -36030,6 +36067,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -36056,6 +36094,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -36393,6 +36432,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -36419,6 +36459,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -36493,6 +36534,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -36519,6 +36561,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -36584,6 +36627,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -36610,6 +36654,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -36735,6 +36780,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -36761,6 +36807,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -36964,6 +37011,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -36990,6 +37038,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37068,6 +37117,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37094,6 +37144,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37136,6 +37187,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37162,6 +37214,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37204,6 +37257,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37230,6 +37284,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37256,6 +37311,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37282,6 +37338,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37386,6 +37443,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37412,6 +37470,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37499,6 +37558,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37525,6 +37585,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37567,6 +37628,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37593,6 +37655,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37834,6 +37897,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37860,6 +37924,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -37939,6 +38004,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -37965,6 +38031,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -38259,6 +38326,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -38285,6 +38353,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -38423,6 +38492,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -38449,6 +38519,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -38819,6 +38890,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     companyEmail: string
+    companyPhone: string
     goal?: number
     address: string
     city: string
@@ -38919,6 +38991,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -38945,6 +39018,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -38971,6 +39045,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     companyEmail?: StringFieldUpdateOperationsInput | string
+    companyPhone?: StringFieldUpdateOperationsInput | string
     goal?: IntFieldUpdateOperationsInput | number
     address?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string

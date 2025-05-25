@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import ModalProvider from "@/providers/modal-provider";
+import { Toaster } from "sonner";
 
 const font = DM_Sans({
   variable: "--font-geist-sans",
@@ -29,7 +31,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ModalProvider>
+              {children}
+              <Toaster />
+            </ModalProvider>
           </ThemeProvider>
         </body>
       </html>

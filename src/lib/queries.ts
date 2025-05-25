@@ -3,8 +3,9 @@
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import prisma from "./prisma";
 import { redirect } from "next/navigation";
-import { Agency, Icon, Plan, User } from "@/app/generated/prisma";
+import { Agency, Icon, Plan, SubAccount, User } from "@/app/generated/prisma";
 import { icons } from "./constants";
+import { v4 } from "uuid";
 
 const client = await clerkClient();
 
@@ -222,7 +223,7 @@ export const updateAgencyDetails = async (agencyId: string, agencyDetails: Parti
         where: {
             id: agencyId
         },
-        data: {...agencyDetails}
+        data: { ...agencyDetails }
     })
 
     return response
@@ -240,7 +241,7 @@ export const deleteAgency = async (agencyId: string) => {
 
 export const initUser = async (newUser: Partial<User>) => {
     const user = await currentUser();
-    
+
     if (!user) {
         return
     }
@@ -273,7 +274,6 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
         return null
     }
 
-    // TODO: get appropriate icons
     try {
         const agencyDetails = await prisma.agency.upsert({
             where: {
@@ -289,32 +289,32 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
                     create: [
                         {
                             name: "Dashboard",
-                            icon: Icon.category,
+                            icon: icons.category,
                             link: `/agency/${agency.id}`
                         },
                         {
                             name: "Launchpad",
-                            icon: Icon.clipboardIcon,
+                            icon: icons.clipboardIcon,
                             link: `/agency/${agency.id}/launchpad`
                         },
                         {
                             name: "Billing",
-                            icon: Icon.payment,
+                            icon: icons.payment,
                             link: `/agency/${agency.id}/billing`
                         },
                         {
                             name: "Settings",
-                            icon: Icon.settings,
+                            icon: icons.settings,
                             link: `/agency/${agency.id}/settings`
                         },
                         {
                             name: "Sub Account",
-                            icon: Icon.person,
+                            icon: icons.person,
                             link: `/agency/${agency.id}/all-subaccounts`
                         },
                         {
                             name: "Team",
-                            icon: Icon.shield,
+                            icon: icons.shield,
                             link: `/agency/${agency.id}/team`
                         }
                     ]
@@ -327,4 +327,111 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
         console.log("Error: could not create customer", error)
 
     }
+}
+
+export const getNotificationAndUser = async (agencyId: string) => {
+    try {
+        const response = await prisma.notification.findMany({
+            where: { agencyId },
+            include: { User: true },
+            orderBy: { createdAt: 'desc' }
+        })
+
+        return response
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const upsertSubaccount = async (subAccount: SubAccount) => {
+    if (!subAccount.companyEmail) {
+        return null
+    }
+
+    const agencyOwner = await prisma.user.findFirst({
+        where: {
+            role: 'AGENCY_OWNER',
+            Agency: {
+                id: subAccount.AgencyId
+            }
+        },
+    })
+
+    if (!agencyOwner) {
+        return console.log("Error: could not find agency owner")
+    }
+
+    const permissionId = v4()
+
+    const response = await prisma.subAccount.upsert({
+        where: {
+            id: subAccount.id,
+        },
+        update: subAccount,
+        create: {
+            ...subAccount,
+            Permissions: {
+                create: {
+                    access: true,
+                    email: agencyOwner.email,
+                    id: permissionId
+                },
+                connect: {
+                    subAccountId: subAccount.id,
+                    id: permissionId
+                }
+            },
+            Pipeline: {
+                create: {
+                    name: "Lead Cycle"
+                }
+            },
+            SidebarOption: {
+                create: [
+                    {
+                        name: "Launchpad",
+                        icon: icons.clipboardIcon,
+                        link: `/subaccount/${subAccount.id}/launchpad`
+                    },
+                    {
+                        name: "Settings",
+                        icon: icons.settings,
+                        link: `/subaccount/${subAccount.id}/settings`
+                    },
+                    {
+                        name: "Funnels",
+                        icon: icons.pipelines,
+                        link: `/subaccount/${subAccount.id}/funnels`
+                    },
+                    {
+                        name: "Media",
+                        icon: icons.database,
+                        link: `/subaccount/${subAccount.id}/media`
+                    },
+                    {
+                        name: "Automation",
+                        icon: icons.chip,
+                        link: `/subaccount/${subAccount.id}/automation`
+                    },
+                    {
+                        name: "Pipelines",
+                        icon: icons.pipelines,
+                        link: `/subaccount/${subAccount.id}/pipelines`
+                    },
+                    {
+                        name: "Contacts",
+                        icon: icons.person,
+                        link: `/subaccount/${subAccount.id}/contacts`
+                    },
+                    {
+                        name: "Dashboard",
+                        icon: icons.category,
+                        link: `/subaccount/${subAccount.id}`
+                    }
+                ]
+            }
+        }
+    });
+
+    return response;
 }
